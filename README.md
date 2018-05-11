@@ -5,6 +5,7 @@
 *   [Details](#details)
 *   [Requirements](#requirements)
 *   [Usage](#usage)
+*   [Contact](#contact)
 
 ----
 
@@ -12,7 +13,7 @@
 
 Check for exposed password matches inside the giant password list of [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) offline on the local system.
 
-[Top](#)
+[Top](#pwned-local)
 
 ## Details
 
@@ -22,7 +23,7 @@ Even though, the website protects the privacy of searched passwords, some people
 
 However, the website also provides that password list as a downloadable text file and *pwned-local* allows to search that list for exposed passwords offline on the local machine.
 
-[Top](#)
+[Top](#pwned-local)
 
 ## Requirements
 
@@ -33,7 +34,7 @@ Depending on which version of the framework you are using:
 *   *Python* 2.x (version 2.7 or higher is recommended, may also work with earlier versions)
 *   *Python* 3.x (version 3.2 or higher is recommended, may also work with earlier versions)
 
-[Top](#)
+[Top](#pwned-local)
 
 ## Usage
 
@@ -71,4 +72,8 @@ Now, you can search for exposed passwords. Either run `pwned-py2.py` or `pwned-p
 
 The script will prompt for your password (hidden) and after confirming, it starts searching the password list and returns the information if it has been exposed.
 
-[Top](#)
+[Top](#pwned-local)
+
+## ContactAny suggestions, questions, bugs to report or feedback to give?You can contact me by sending an email to <dev@urbanware.org>.
+
+[Top](#pwned-local)
