@@ -76,6 +76,8 @@ The script will prompt for your password (hidden) and after confirming, it start
 
 ## Contact
 
-Any suggestions, questions, bugs to report or feedback to give?You can contact me by sending an email to <dev@urbanware.org>.
+Any suggestions, questions, bugs to report or feedback to give?
+
+You can contact me by sending an email to <dev@urbanware.org>.
 
 [Top](#pwned-local)
