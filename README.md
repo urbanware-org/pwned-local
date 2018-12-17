@@ -58,9 +58,9 @@ Copy that file into the same directory where `pwned-py2.py` and `pwned-py3.py` a
 
 ### Apply list updates
 
-In case the website also provides list updates, you can also download them and enhance the password list.
+In case the website also provides list updates, you can enhance the password list with them.
 
-Download and extract those archives. Then, append them to the password list like this:
+Download those files (also archives) and extract them. Then, append each of the extracted text files to the password list like this:
 
 ```bash
 $ cat pwned-passwords-update-2.txt >> pwned-passwords.txt
