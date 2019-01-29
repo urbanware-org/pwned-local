@@ -33,10 +33,8 @@ count = 0
 file_name = "pwned-passwords.txt"
 path_script = os.path.dirname(os.path.realpath(sys.argv[0]))
 path_list = os.path.join(path_script, file_name)
-pwned_lines = sum((1 for i in open(path_list, 'rb')))
 pwned = False
 percent = 0
-perstep = pwned_lines / 100
 
 if not os.path.exists(path_list):
     print(("error: Password file '" + file_name + "' not found"))
@@ -44,6 +42,9 @@ if not os.path.exists(path_list):
 elif not os.path.isfile(path_list):
     print("error: Given path to password file is a directory, not a file")
     sys.exit(2)
+else:
+    pwned_lines = sum((1 for i in open(path_list, "rb")))
+    perstep = pwned_lines / 100
 
 print()
 print("Enter your password below. The input will not be echoed on the screen.")
