@@ -13,6 +13,8 @@
 
 Check for exposed password matches inside the giant password list of [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) offline on the local system.
 
+:information_source: Notice that this is just a **rudimentary tool**. Further information can be found below.
+
 [Top](#pwned-local)
 
 ## Details
@@ -22,6 +24,8 @@ The [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) website provides 
 Even though the website protects the privacy of searched passwords, some people still don't want to enter their passwords online.
 
 However, the website also provides that password list as a downloadable text file and *pwned-local* allows to search that list for exposed passwords offline on the local machine.
+
+As mentioned above, this is just a rudimentary tool as it simply processes the password list line by line which is not really performant.
 
 [Top](#pwned-local)
 
