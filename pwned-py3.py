@@ -9,7 +9,7 @@
 # GitLab: https://gitlab.com/urbanware-org/pwned-local
 # ============================================================================
 
-__version__ = "1.0.1"
+__version__ = "1.1.0"
 
 import getpass
 import hashlib
