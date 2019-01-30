@@ -17,6 +17,7 @@ import os
 import sys
 import time
 
+
 def get_file_size(file_path):
     """
         Get the size of a file in bytes.
