@@ -25,7 +25,7 @@ Even though the website protects the privacy of searched passwords, some people 
 
 However, the website also provides that password list as a downloadable text file and *pwned-local* allows to search that list for exposed passwords offline on the local machine.
 
-As mentioned above, this is just a rudimentary tool as it simply processes the password list line by line which is not really performant.
+As mentioned above, this is just a rudimentary tool due to the fact that it simply processes the password list line by line which is not really performant. Furthermore, the code should be revised in general. It works so far, but it does not look very nice.
 
 [Top](#pwned-local)
 
