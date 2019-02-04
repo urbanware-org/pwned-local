@@ -9,7 +9,7 @@
 # GitLab: https://gitlab.com/urbanware-org/pwned-local
 # ============================================================================
 
-__version__ = "1.2.0"
+__version__ = "1.2.1"
 
 import getpass
 import hashlib
@@ -54,6 +54,19 @@ def get_passwords():
     return list_passwd
 
 
+def read_passwords(input_file):
+    list_passwd = []
+    with open(input_file, "r") as f:
+        for line in f:
+            passwd = line.replace("\r\n", "").replace("\n", "")
+            if len(line) > 0:
+                hash_passwd = \
+                    hashlib.sha1(passwd.encode("utf-8")).hexdigest().upper()
+                print("SHA-1 hash: " + hash_passwd)
+                list_passwd.append(hash_passwd)
+        return list_passwd
+
+
 count = 0
 file_name = "pwned-passwords.txt"
 path_script = os.path.dirname(os.path.realpath(sys.argv[0]))
@@ -65,12 +78,21 @@ pwned = False
 percent = 0
 retval = 0
 
-if not os.path.exists(path_list):
-    print("error: Password file '%s' not found" % file_name)
-    sys.exit(2)
-elif not os.path.isfile(path_list):
-    print("error: Given path to password file is a directory, not a file")
-    sys.exit(2)
+if len(sys.argv) == 1:
+    if not os.path.exists(path_list):
+        print("error: Password file '%s' not found" % file_name)
+        sys.exit(2)
+    elif not os.path.isfile(path_list):
+        print("error: Given path to password file is a directory, not a file")
+        sys.exit(2)
+else:
+    if not os.path.exists(sys.argv[1]):
+        print("error: Input text file '%s' not found" % sys.argv[1])
+        sys.exit(2)
+    elif not os.path.isfile(sys.argv[1]):
+        print("error: Given path to input text file is a directory, " +
+              "not a file")
+        sys.exit(2)
 
 print()
 print("Notice that this is just a rudimentary tool as it simply " +
@@ -89,17 +111,26 @@ if file_size < 20000000000:
     print("    https://haveibeenpwned.com/Passwords")
     print()
 
-print("Enter your password below. The input will not be echoed on the " +
-      "screen.")
-print()
+if len(sys.argv) == 1:
+    print("Enter your password below. The input will not be echoed on " +
+          "the screen.")
+    print()
+    print("Instead of entering the passwords here, you can also " +
+          "provide a text")
+    print("file containing them, for example:")
+    print()
+    print("    %s mypasswords.txt" % sys.argv[0])
+    print()
+    list_passwd = get_passwords()
+    if len(list_passwd) == 0:
+        print()
+        print("Canceled (no passwords given).")
+        print()
+        sys.exit(0)
+else:
+    list_passwd = read_passwords(sys.argv[1])
 
-list_passwd = get_passwords()
-if len(list_passwd) == 0:
-    print()
-    print("Canceled (no passwords given).")
-    print()
-    sys.exit(0)
-elif len(list_passwd) == 1:
+if len(list_passwd) == 1:
     single_passwd = True
 else:
     single_passwd = False
@@ -132,8 +163,7 @@ with open(path_list, "r") as f:
                     pwned = True
                     break
                 else:
-                    print("Pwned! Password #%s has been seen before!" %
-                          passwd)
+                    print("Pwned! Password #%s has been seen before!" % passwd)
                     print("Found corresponding match in line %s." %
                           str(count))
                     print()
