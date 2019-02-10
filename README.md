@@ -31,6 +31,8 @@ As mentioned above, this is just a rudimentary tool due to the fact that it simp
 
 ## Requirements
 
+### Runtime environment
+
 In order to use *pwned-local*, the *Python* framework must be installed on the system.
 
 Depending on which version of the framework you are using:
@@ -38,43 +40,52 @@ Depending on which version of the framework you are using:
 *   *Python* 2.x (version 2.7 or higher is recommended, may also work with earlier versions)
 *   *Python* 3.x (version 3.2 or higher is recommended, may also work with earlier versions)
 
-[Top](#pwned-local)
-
-## Usage
+### Password list
 
 Before you can use *pwned-local*, you have to download the password list from the [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) website.
 
 Follow the link above and scroll down to the table that provides the download links.
 
-### Download the latest list version
+Download the file containing the list with the hashes in the **SHA-1** format. This should be the largest file you can get (has a size of several gigabytes).
 
-You can choose from multiple files. Download the file containing the list with the hashes in the **SHA-1** format. This should be the largest file you can get (has a size of several gigabytes).
+[Top](#pwned-local)
 
-The password list itself is a simple text file containing hashes of the exposed passwords and has about three times the size of the archive. Due to this, the password list is compressed as a *7z* archive.
+## Usage
 
-After downloading the archive you have to extract it first (may take a while). When finished, rename the extracted file to `pwned-passwords.txt`, for example:
+If the requirements are met, you can check for exposed passwords. There are two modes as shown below.
 
-```bash
-$ mv pwned-passwords-2.0.txt pwned-passwords.txt
+In these usage examples the downloaded file which contains all the password hashes is called `pwned-passwords.txt`.
+
+### Input prompt
+
+You can check the passwords by entering them manually one after another via prompt.
+
+In case you are using the *Python* 3 version the command would look like this:
+
+```
+$ ./pwned-py3.py -l pwned-passwords.txt -p
 ```
 
-Copy that file into the same directory where `pwned-py2.py` and `pwned-py3.py` are located (or the other way round).
+### Input plain text file
 
-### Apply list updates
+Another way to check the passwords is to give a plain text file which contains all passwords you want to check for.
 
-In case the website also provides list updates, you can enhance the password list with them.
+For example, create a file called `my-passwords.txt` containing some passwords you would like to check:
 
-Download those files (also archives) and extract them. Then, append each of the extracted text files to the password list like this:
-
-```bash
-$ cat pwned-passwords-update-2.txt >> pwned-passwords.txt
+```
+sample
+1234
+12345
+foo
+foobar
+thisshouldnotbeinsidethepwnedfile
 ```
 
-### Search exposed passwords
+In case you are using the *Python* 3 version the command to check the passwords this way would look like this:
 
-Now, you can search for exposed passwords. Either run `pwned-py2.py` or `pwned-py3.py` (depending on which *Python* framework is installed).
-
-The script will prompt for your password (hidden) and after confirming, it starts searching the password list and returns the information if it has been exposed.
+```
+$ ./pwned-py3.py -l pwned-passwords.txt -i my-passwords.txt
+```
 
 [Top](#pwned-local)
 
