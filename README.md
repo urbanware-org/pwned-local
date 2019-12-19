@@ -93,6 +93,6 @@ $ ./pwned-py3.py -l pwned-passwords.txt -i my-passwords.txt
 
 Any suggestions, questions, bugs to report or feedback to give?
 
-You can contact me by sending an email to <dev@urbanware.org>.
+You can contact me by sending an email to [dev@urbanware.org](mailto:dev@urbanware.org).
 
 [Top](#pwned-local)
