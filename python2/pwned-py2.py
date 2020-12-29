@@ -150,7 +150,7 @@ def print_notice(pwned_list_size):
 
     if pwned_list_size < 20000000000:
         print "The current password hash file seems to be an incomplete " + \
-              "or sample file. Please"
+              "or sample file."
         print "Please download the complete password list from the " + \
               "official website:"
         print
