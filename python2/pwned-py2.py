@@ -67,9 +67,8 @@ def main():
         p.error("The given password hash list file does not exist.")
 
     if not args.input_file and not args.prompt:
-        p.error("Please additionally use either the '--input-file' or the " +
-                "'--prompt' argument to input your passwords, see '--help' " +
-                "for usage examples.")
+        p.error("Another argument is required, see '--help' for usage " +
+                "examples.")
     elif args.input_file and args.prompt:
         p.error("The arguments '--input-file' and '--prompt' cannot be " +
                 "used together.")
