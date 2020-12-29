@@ -29,8 +29,8 @@ def main():
         sys.exit(1)
 
     p.set_description("Check for exposed passwords offline on the local " +
-                      "system via password hash list")
-    #p.set_epilog()
+                      "system via password hash list.")
+    # p.set_epilog()
 
     # Required arguments
     p.add_avalue("-l", "--pwned-list", "path to the text file containing " +
