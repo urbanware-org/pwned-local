@@ -2,7 +2,7 @@
 
 # ============================================================================
 # pwned-local - Check for exposed password matches of 'haveibeenpwned.com'
-# Copyright (C) 2019 by Ralf Kilian
+# Copyright (C) 2021 by Ralf Kilian
 # Distributed under the MIT License (https://opensource.org/licenses/MIT)
 #
 # GitHub: https://github.com/urbanware-org/pwned-local
