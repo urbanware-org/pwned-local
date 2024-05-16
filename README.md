@@ -13,19 +13,17 @@
 
 Check for exposed password matches inside the giant password list of [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) offline on the local system.
 
-:information_source: Notice that this is just a **rudimentary tool**. Further information can be found below.
-
 [Top](#pwned-local)
 
 ## Details
 
 The [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) website provides a giant password list to check for exposed passwords online.
 
-Even though the website protects the privacy of searched passwords, some people still don't want to enter their passwords online.
+Even though the website protects the privacy of searched passwords, some people still do not want to enter their passwords online.
 
-However, the website also provides that password list as a downloadable text file and *pwned-local* allows to search that list for exposed passwords offline on the local machine.
+However, it also provides the password list as a downloadable text file and *pwned-local* allows to search that list for exposed passwords offline on the local machine.
 
-As mentioned above, this is just a rudimentary tool due to the fact that it simply processes the password list line by line which is not really performant. Furthermore, the code should be revised in general. It works so far, but it does not look very nice.
+This is just a rudimentary tool due to the fact that it simply processes the password list line by line which is not really performant. Furthermore, the code should be revised in general. It works so far, but it does not look very nice.
 
 [Top](#pwned-local)
 
@@ -42,11 +40,11 @@ Depending on which version of the framework you are using:
 
 ### Password list
 
-Before you can use *pwned-local*, you have to download the password list from the [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) website.
+The password list is no longer available as plain text file as a download directly from the website. Instead, there is the official [PwnedPasswordsDownloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader) tool to get the password list.
 
-Follow the link above and scroll down to the table that provides the download links.
+However, I have not used that tool before, so I cannot tell anything about it.
 
-Download the file containing the list with the hashes in the **SHA-1** format. This should be the largest file you can get (has a size of several gigabytes).
+You have to download the file containing the password hashes in the **SHA-1** format as *pwned-local* only supports those.
 
 [Top](#pwned-local)
 
