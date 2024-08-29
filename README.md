@@ -19,11 +19,13 @@ Check for exposed password matches inside the giant password list of [haveibeenp
 
 The [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) website provides a giant password list to check for exposed passwords online.
 
-Even though the website protects the privacy of searched passwords, some people still do not want to enter their passwords online.
+Even though, the website protects the privacy of searched passwords, some people still do not want to enter their passwords online.
 
-However, it also provides the password list as a downloadable text file and *pwned-local* allows to search that list for exposed passwords offline on the local machine.
+Alternatively, the website used to provide the password list as a downloadable plain text file and *pwned-local* allows to search that list for exposed passwords offline on the local machine.
 
-This is just a rudimentary tool due to the fact that it simply processes the password list line by line which is not really performant. Furthermore, the code should be revised in general. It works so far, but it does not look very nice.
+However, the password list is no longer directly downloadable as a plain text file from the website and has to be obtained another way. For details see the the [password list](#password-list) information inside the [requirements](#requirements) section below.
+
+This is just a rudimentary tool which simply processes the password list line by line, which is not really performant. Furthermore, the code should be revised in general.
 
 [Top](#pwned-local)
 
@@ -52,7 +54,9 @@ You have to download the file containing the password hashes in the **SHA-1** fo
 
 If the requirements are met, you can check for exposed passwords. There are two modes as shown below.
 
-In these usage examples the downloaded file which contains all the password hashes is called `pwned-passwords.txt`.
+First of all, there are two plain text files included with *pwned-local* which are `pwned-passwords.txt` and `my-passwords.txt`.
+
+The file `pwned-passwords.txt` just contains a **very small excerpt** from the original exposed passwords file provided by [haveibeenpwned.com](https://haveibeenpwned.com/Passwords). This is suitable for usage examples, but not for practical use. Before using *pwned-local* productively, that file has to be replaced with the original exposed passwords file mentioned earlier.
 
 ### Input prompt
 
@@ -68,7 +72,7 @@ $ ./pwned-py3.py -l pwned-passwords.txt -p
 
 Another way to check the passwords is to give a plain text file which contains all passwords you want to check for.
 
-For example, create a file called `my-passwords.txt` containing some passwords you would like to check:
+For example, create a file (or use the included one) called `my-passwords.txt` containing some passwords you would like to check (one password per line):
 
 ```
 sample
