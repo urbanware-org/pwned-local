@@ -17,7 +17,7 @@ Check for exposed password matches inside the giant password list of [haveibeenp
 
 ## Details
 
-The [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) website provides a giant password list to check for exposed passwords. Despite the website's privacy protections, many users are understandably reluctant to enter their passwords online.
+The [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) website provides a giant password list to check for exposed passwords. Despite its privacy protections, many users are understandably reluctant to enter their passwords online.
 
 Alternatively, the website used to provide the password list as a downloadable plain text file and *pwned-local* allows to search that list for exposed passwords offline on the local machine.
 
