@@ -17,15 +17,16 @@ Check for exposed password matches inside the giant password list of [haveibeenp
 
 ## Details
 
-The [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) website provides a giant password list to check for exposed passwords online.
-
-Even though, the website protects the privacy of searched passwords, some people still do not want to enter their passwords online.
+The [haveibeenpwned.com](https://haveibeenpwned.com/Passwords) website provides a giant password list to check for exposed passwords. Despite the website's privacy protections, many users are understandably reluctant to enter their passwords online.
 
 Alternatively, the website used to provide the password list as a downloadable plain text file and *pwned-local* allows to search that list for exposed passwords offline on the local machine.
 
 However, the password list is no longer directly downloadable as a plain text file from the website and has to be obtained another way. For details see the the [password list](#password-list) information inside the [requirements](#requirements) section below.
 
 This is just a rudimentary tool which simply processes the password list line by line, which is not really performant. Furthermore, the code should be revised in general.
+
+> [!NOTE]
+> This project was **officially discontinued** as of August 2025 and is **no longer maintained**.
 
 [Top](#pwned-local)
 
@@ -93,8 +94,8 @@ $ ./pwned-py3.py -l pwned-passwords.txt -i my-passwords.txt
 
 ## Contact
 
-Any suggestions, questions, bugs to report or feedback to give?
+As mentioned above, this project has been discontinued. For this reason, no new features will be implemented, existing features will not be enhanced and remaining bugs will not be fixed either.
 
-You can contact me by sending an email to [dev@urbanware.org](mailto:dev@urbanware.org) or by opening a *GitHub* issue (which I would prefer if you have a *GitHub* account).
+However, if you have questions about it, you can contact me by sending an email to <dev@urbanware.org>.
 
 [Top](#pwned-local)
